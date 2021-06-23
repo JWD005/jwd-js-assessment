@@ -106,15 +106,15 @@ btnSubmit.addEventListener('click', () => {//event listener
   score.innerHTML = `You got ${calculateScore()} right answers!`; 
   btnSubmit.style.display = 'none';
 })
-//timer
-var count = 15;
-var interval = setInterval(function(){
-  document.getElementById('#time').innerHTML=count;
-  count--;
-  if (count === 0){
+
+//timer 60 secs
+let countDown = 60; //set count down duration 
+let interval = setInterval(function(){
+  document.querySelector('#time').innerHTML=countDown; // grab #id and set .innerhtml
+  countDown--; // countdown --
+  if (countDown === 0){ // countdown condition met
     clearInterval(interval);
-    document.getElementById('#time').innerHTML='Done';
-    // or...
+    document.querySelector('#time').innerHTML='0';
     alert("You're out of time!");
   }
 }, 1000);
