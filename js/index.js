@@ -109,7 +109,7 @@ btnSubmit.addEventListener('click', () => {//event listener
 
 //timer 60 secs
 let countDown = 60; //set count down duration 
-let interval = setInterval(function(){
+let interval = setInterval(function(){ // at each end
   document.querySelector('#time').innerHTML=countDown; // grab #id and set .innerhtml
   countDown--; // countdown --
   if (countDown === 0){ // countdown condition met
