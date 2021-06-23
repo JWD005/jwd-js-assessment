@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // function to Display the quiz questions and answers from the object
   const displayQuiz = () => {
-    const quizWrap = document.querySelector('#quizWrap');
+    const quizWrap = document.querySelector('#quizWrap'); //(B) QUIZ CONTAINER
     let quizDisplay = '';
     quizArray.map((quizItem, index) => {
       quizDisplay += `<ul class="list-group">
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Calculate the score
   const calculateScore = () => {
     let score = 0;
-    quizArray.map((quizItem, index) => {
+    quizArray.map((quizItem, index) => { //.map() returns a new array from an argument of the callback function.
       for (let i = 0; i < 4; i++) {
         //highlight the li if it is the correct answer
         let li = `li_${index}_${i}`;
@@ -88,13 +88,44 @@ window.addEventListener('DOMContentLoaded', () => {
           //change background color of li element here
         }
 
-        if (radioElement.checked) {
-          // code for task 1 goes here
+        if (radioElement.checked) { // radio element checked
+          if (quizItem.a === i) {
+            console.log(score);
+            score++;
+          }
         }
       }
     });
+    return score;
   };
+// add eventlistener for the submit button.
+let btnSubmit = document.querySelector('#btnSubmit');//grab button
+btnSubmit.addEventListener('click', () => {//event listener
+  calculateScore();
+  let score = document.querySelector('#score');
+  score.innerHTML = `You got ${calculateScore()} right answers!`; 
+  btnSubmit.style.display = 'none';
+})
+//timer
+var count = 15;
+var interval = setInterval(function(){
+  document.getElementById('#time').innerHTML=count;
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    document.getElementById('#time').innerHTML='Done';
+    // or...
+    alert("You're out of time!");
+  }
+}, 1000);
 
-  // call the displayQuiz function
-  displayQuiz();
+// call the displayQuiz function
+displayQuiz();
 });
+
+
+
+
+
+
+

@@ -21,7 +21,7 @@
       <div class="card" style="width: 18rem">
         <div class="card-body">
           <h5 class="card-title">Test your knowledge</h5>
-          <p class="card-text">Some quick description about the quiz .</p>
+          <p class="card-text">General Knowledge Quiz.</p>
           <a class="btn btn-primary">Start</a>
         </div>
       </div>
@@ -31,7 +31,7 @@
     <div class="container" id="quizBlock" style="display: none">
       <div class="mb-5">
         <h2>Test your knowledge</h2>
-        - Time remaining <span id="time">01:00</span>
+        - Time remaining <span id="time">01:00</span><!--timer-->
       </div>
       <div id="quizWrap"></div>
 
@@ -39,7 +39,8 @@
         <button type="button" class="btn btn-primary" id="btnSubmit">
           Submit Quiz
         </button>
-        <button type="button" class="btn btn-primary" id="btnReset">
+        <!--reset button-->
+        <button type="button" class="btn btn-primary" id="btnReset" onclick="document.location.reload()">
           Reset Quiz
         </button>
         <span id="score"></span>
