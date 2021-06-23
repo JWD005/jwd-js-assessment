@@ -44,6 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
     },
+    {
+      q: 'What is the biggest animal in the world?',
+      o: ['Great white Shark', 'Brown Bear', 'Blue Whale', 'Anaconda'],
+      a: 2,
+    },
+    {
+      q: 'What is a baby rabbit called?',
+      o: ['baby buck', 'A kit', 'Fur Ball', 'Cuties'],
+      a: 1,
+    },
   ];
 
   // function to Display the quiz questions and answers from the object
