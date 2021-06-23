@@ -86,6 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (quizItem.a == i) {
           //change background color of li element here
+          //liElement.style.backgroundColor = '#ddf2da';
         }
 
         if (radioElement.checked) { // radio element checked
@@ -118,7 +119,9 @@ let interval = setInterval(function(){ // at each end
     alert("You're out of time!");
   }
 }, 1000);
-
+// reset button event listener to reload the page
+//reset.addEventListener('click', () => {
+//window.location.reload();
 // call the displayQuiz function
 displayQuiz();
 });
